@@ -47,3 +47,13 @@ The user can get a list of awesome quotes, five at a time:
             "attribution": "Anonymous"
         },
     ]
+
+Running
+-------
+
+1. Build the Docker image using [sbt](http://www.scala-sbt.org/) with the Native Packager
+   plugin. This requires [Docker](https://www.docker.com/) to be installed on the
+   build machine: `sbt clean docker:publishLocal`
+2. Run a Docker container from the image:
+   `docker run -it -p 8080:8080 --name quotes-api quotes-api:0.0.1-SNAPSHOT`
+3. Test it: `curl -i http://localhost:8080/quotes`

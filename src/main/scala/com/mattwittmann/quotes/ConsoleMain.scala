@@ -1,6 +1,6 @@
 package com.mattwittmann.quotes
 
-object Main extends App {
+object ConsoleMain extends App {
   val service = new QuoteService
 
   def quoteToString(quote: Quote) = s""""${quote.quote}"\n\t—${quote.attribution}"""
