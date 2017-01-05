@@ -4,18 +4,20 @@ name := "quotes-api"
 
 version := "0.0.1-SNAPSHOT"
 
-scalaVersion := "2.11.8"
+scalaVersion := "2.12.1"
 
 scalacOptions ++= Seq("-feature", "-deprecation")
 
-val akkaVersion = "2.4.10"
+val akkaVersion = "2.4.16"
+
+val akkaHttp = "10.0.1"
 
 libraryDependencies ++= Seq("com.typesafe.akka" %% "akka-actor" % akkaVersion,
-                            "com.typesafe.akka" %% "akka-http-core" % akkaVersion,
-                            "com.typesafe.akka" %% "akka-http-experimental" % akkaVersion,
-                            "com.typesafe.akka" %% "akka-http-spray-json-experimental" % akkaVersion,
-                            "io.spray" %% "spray-json" % "1.3.2",
-                            "org.scalatest" %% "scalatest" % "3.0.0" % Test)
+                            "com.typesafe.akka" %% "akka-http-core" % akkaHttp,
+                            "com.typesafe.akka" %% "akka-http" % akkaHttp,
+                            "com.typesafe.akka" %% "akka-http-spray-json" % akkaHttp,
+                            "io.spray" %% "spray-json" % "1.3.3",
+                            "org.scalatest" %% "scalatest" % "3.0.1" % Test)
 
 enablePlugins(JavaAppPackaging)
 
